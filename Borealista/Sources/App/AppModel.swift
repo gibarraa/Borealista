@@ -227,7 +227,7 @@ final class AppModel: ObservableObject {
         guard !loginEmail.trimmed.isEmpty, !loginPassword.trimmed.isEmpty else {
             alertContext = AlertContext(
                 title: "Datos incompletos",
-                message: "Escribe tu correo institucional y tu contrasena para continuar."
+                message: "Escribe tu correo institucional y tu contraseña para continuar."
             )
             return
         }
@@ -271,8 +271,8 @@ final class AppModel: ObservableObject {
             alertContext = AlertContext(
                 title: "Datos incompletos",
                 message: selectedRole == .student
-                    ? "Completa tu nombre, correo, matricula y contrasena antes de registrarte."
-                    : "Completa tu nombre, correo y contrasena antes de registrarte."
+                    ? "Completa tu nombre, correo, matricula y contraseña antes de registrarte."
+                    : "Completa tu nombre, correo y contraseña antes de registrarte."
             )
             return
         }
@@ -287,8 +287,8 @@ final class AppModel: ObservableObject {
 
         guard password == confirmPassword else {
             alertContext = AlertContext(
-                title: "Contrasenas distintas",
-                message: "La confirmacion de contrasena no coincide. Corrigela para continuar."
+                title: "Contraseñas distintas",
+                message: "La confirmacion de contraseña no coincide. Corrigela para continuar."
             )
             return
         }
@@ -583,15 +583,15 @@ final class AppModel: ObservableObject {
 
     func updateTeacherPassword(current: String, new: String, confirmation: String) async throws {
         guard !current.trimmed.isEmpty, !new.trimmed.isEmpty, !confirmation.trimmed.isEmpty else {
-            throw BorealistaAPIError.invalidInput("Completa los tres campos de contrasena para continuar.")
+            throw BorealistaAPIError.invalidInput("Completa los tres campos de contraseña para continuar.")
         }
 
         guard new.trimmed == confirmation.trimmed else {
-            throw BorealistaAPIError.invalidInput("La nueva contrasena y su confirmacion no coinciden.")
+            throw BorealistaAPIError.invalidInput("La nueva contraseña y su confirmacion no coinciden.")
         }
 
         guard new.trimmed.count >= 8 else {
-            throw BorealistaAPIError.invalidInput("La nueva contrasena debe tener al menos 8 caracteres.")
+            throw BorealistaAPIError.invalidInput("La nueva contraseña debe tener al menos 8 caracteres.")
         }
 
         _ = try validatedTeacherSession()
@@ -1311,7 +1311,7 @@ struct BorealistaAPI {
         )
 
         let response: APIMessageEnvelope = try await perform(request)
-        return response.message ?? "Contrasena actualizada."
+        return response.message ?? "Contraseña actualizada."
     }
 
     func startTeacherAttendanceSession(teacherID: Int, courseID: Int) async throws -> APITeacherAttendanceSession {

@@ -28,7 +28,7 @@
 		8DB851AFBF8EC044BB5C7D45 /* StudentViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViews.swift; sourceTree = "<group>"; };
 		961C6EC4D6706585310B51A5 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		AC1773160003BD6E133D1A93 /* AuthViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViews.swift; sourceTree = "<group>"; };
-		CA18BA742C220B3BA58683A8 /* Borealista.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Borealista.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA18BA742C220B3BA58683A8 /* Borealista.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Borealista.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F78F44EA0D1AF7649A8020D5 /* PremiumComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumComponents.swift; sourceTree = "<group>"; };
 		FCD5DCF1EF9C0F2CF5821002 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,7 +180,6 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					4E4549AB2C76FC56B2F9C878 = {
-						DevelopmentTeam = RBNV9N7PDC;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -242,7 +241,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RBNV9N7PDC;
+				DEVELOPMENT_TEAM = 99Q5HGW243;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Borealista/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -251,7 +250,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = igaeel787.borealista;
+				PRODUCT_BUNDLE_IDENTIFIER = rasec.borealista;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -267,7 +266,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = RBNV9N7PDC;
+				DEVELOPMENT_TEAM = 99Q5HGW243;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = Borealista/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -276,7 +275,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = igaeel787.borealista;
+				PRODUCT_BUNDLE_IDENTIFIER = rasec.borealista;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

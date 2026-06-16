@@ -81,13 +81,13 @@ struct AuthFlowView: View {
             )
 
             FormField(
-                title: "Contrasena",
+                title: "Contraseña",
                 icon: "lock.fill",
                 text: Binding(
                     get: { appModel.loginPassword },
                     set: { appModel.loginPassword = $0 }
                 ),
-                prompt: "Tu contrasena",
+                prompt: "Tu contraseña",
                 secure: true
             )
 
@@ -151,24 +151,24 @@ struct AuthFlowView: View {
             }
 
             FormField(
-                title: "Contrasena",
+                title: "Contraseña",
                 icon: "lock.fill",
                 text: Binding(
                     get: { appModel.registerPassword },
                     set: { appModel.registerPassword = $0 }
                 ),
-                prompt: "Crea una contrasena",
+                prompt: "Crea una contraseña",
                 secure: true
             )
 
             FormField(
-                title: "Confirmar contrasena",
+                title: "Confirmar contraseña",
                 icon: "checkmark.shield.fill",
                 text: Binding(
                     get: { appModel.registerConfirmPassword },
                     set: { appModel.registerConfirmPassword = $0 }
                 ),
-                prompt: "Confirma tu contrasena",
+                prompt: "Confirma tu contraseña",
                 secure: true
             )
 

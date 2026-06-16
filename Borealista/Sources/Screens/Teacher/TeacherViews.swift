@@ -1160,31 +1160,31 @@ struct TeacherProfileView: View {
                 }
 
                 FormField(
-                    title: "Contrasena actual",
+                    title: "Contraseña actual",
                     icon: "lock.fill",
                     text: $currentPassword,
-                    prompt: "Escribe tu contrasena",
+                    prompt: "Escribe tu contraseña",
                     secure: true
                 )
 
                 FormField(
-                    title: "Nueva contrasena",
+                    title: "Nueva contraseña",
                     icon: "key.fill",
                     text: $newPassword,
-                    prompt: "Nueva contrasena",
+                    prompt: "Nueva contraseña",
                     secure: true
                 )
 
                 FormField(
-                    title: "Confirma nueva contrasena",
+                    title: "Confirma nueva contraseña",
                     icon: "checkmark.shield.fill",
                     text: $confirmationPassword,
-                    prompt: "Repite tu contrasena",
+                    prompt: "Repite tu contraseña",
                     secure: true
                 )
             }
 
-            PrimaryActionButton(title: "Confirmar cambio de contrasena", systemImage: "checkmark") {
+            PrimaryActionButton(title: "Confirmar cambio de contraseña", systemImage: "checkmark") {
                 updatePassword()
             }
 
@@ -1217,8 +1217,8 @@ struct TeacherProfileView: View {
                 confirmationPassword = ""
 
                 alertContext = AlertContext(
-                    title: "Contrasena actualizada",
-                    message: "Tu nueva contrasena se guardo correctamente."
+                    title: "Contraseña actualizada",
+                    message: "Tu nueva contraseña se guardo correctamente."
                 )
             } catch {
                 alertContext = AlertContext(
