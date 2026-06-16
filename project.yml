@@ -1,0 +1,28 @@
+name: Borealista
+options:
+  minimumXcodeGenVersion: 2.45.0
+configs:
+  Debug: debug
+  Release: release
+targets:
+  Borealista:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources:
+      - path: Borealista/Sources
+      - path: Borealista/Resources
+        buildPhase: resources
+    settings:
+      base:
+        CODE_SIGN_STYLE: Automatic
+        DEVELOPMENT_TEAM: RBNV9N7PDC
+        PRODUCT_BUNDLE_IDENTIFIER: igaeel787.borealista
+        GENERATE_INFOPLIST_FILE: NO
+        INFOPLIST_FILE: Borealista/Info.plist
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 1.0
+        SWIFT_VERSION: 5.0
+        SUPPORTED_PLATFORMS: "iphoneos iphonesimulator"
+        SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD: NO
+        TARGETED_DEVICE_FAMILY: "1"

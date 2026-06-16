@@ -1,0 +1,52 @@
+BOREALISTA - PENDIENTE DE BACKEND DESPUES DE ESTA ENTREGA
+
+Estado actual:
+- Ya existe backend local funcional para alumno y docente.
+- Ya cubre login, registro, cursos, asistencia, QR por matricula, justificantes, grupos y clases.
+- Ya incluye una ventana docente de 5 minutos para escaneo QR.
+
+Lo que falta SOLO si se quiere llevar esto a produccion real:
+
+1. Autenticacion con tokens
+- access_token
+- refresh_token
+- expiracion de sesion
+
+2. HTTPS real
+- mover la API a HTTPS
+- retirar cargas inseguras de ATS cuando ya no se use HTTP
+
+3. Base de datos persistente de produccion
+- migrar de JSON local a PostgreSQL/MySQL
+- agregar migraciones y respaldo
+
+4. Seguridad por roles
+- middleware para proteger rutas de alumno y docente
+- validacion de ownership por matricula o docente
+
+5. Adjuntos en justificantes
+- subir comprobantes o evidencias
+- almacenamiento de archivos
+
+6. Hash de contrasenas
+- no guardar passwords en texto plano
+- usar bcrypt o equivalente
+
+7. Logs y observabilidad
+- logs estructurados
+- metricas
+- trazabilidad de errores
+
+8. Despliegue continuo
+- variables de entorno
+- Docker opcional
+- pipeline de deploy
+
+9. Notificaciones
+- push o correo para justificantes aprobados/rechazados
+
+10. Validacion fuerte del QR
+- firma o expiracion del payload si se requiere anti-fraude
+
+Para la rubrica y para la demo del proyecto:
+- no hay bloqueadores de backend pendientes

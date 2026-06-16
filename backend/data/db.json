@@ -1,0 +1,277 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "code": "FAC-204",
+      "first_name": "Ana Maria",
+      "last_name": "Torres",
+      "email": "ana.torres@borealista.edu",
+      "password": "Borealista123",
+      "role": "TEACHER"
+    },
+    {
+      "id": 2,
+      "code": "0079866",
+      "first_name": "Julio Cesar",
+      "last_name": "Romero Tavares",
+      "email": "julio.romero0079866@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    },
+    {
+      "id": 3,
+      "code": "0079891",
+      "first_name": "Andrea",
+      "last_name": "Flores",
+      "email": "andrea.flores@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    },
+    {
+      "id": 4,
+      "code": "0079812",
+      "first_name": "Marco",
+      "last_name": "Benitez",
+      "email": "marco.benitez@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    },
+    {
+      "id": 5,
+      "code": "0079762",
+      "first_name": "Camila",
+      "last_name": "Nunez",
+      "email": "camila.nunez@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    },
+    {
+      "id": 6,
+      "code": "0079788",
+      "first_name": "Sofia",
+      "last_name": "Herrera",
+      "email": "sofia.herrera@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    },
+    {
+      "id": 7,
+      "code": "FAC-007",
+      "first_name": "Profesor",
+      "last_name": "622366",
+      "email": "profesor.622366@borealista.edu",
+      "password": "Borealista123",
+      "role": "TEACHER"
+    },
+    {
+      "id": 8,
+      "code": "8862236",
+      "first_name": "Alumno",
+      "last_name": "622366",
+      "email": "alumno.622366@borealista.edu",
+      "password": "Borealista123",
+      "role": "STUDENT"
+    }
+  ],
+  "courses": [
+    {
+      "course_id": 1,
+      "course_name": "Matematicas avanzadas",
+      "course_code": "MAT-402",
+      "teacher_id": 1,
+      "classroom": "Salon 302",
+      "career": "Ingenieria en software",
+      "group_name": "Grupo 3A",
+      "start_date": "2026-08-01",
+      "end_date": "2026-12-15",
+      "absence_limit": 3,
+      "schedule_blocks": [
+        {
+          "id": "b1",
+          "days": [
+            "L",
+            "X"
+          ],
+          "start_time": "9:00",
+          "end_time": "11:00"
+        },
+        {
+          "id": "b2",
+          "days": [
+            "M",
+            "J",
+            "V"
+          ],
+          "start_time": "11:00",
+          "end_time": "13:00"
+        }
+      ],
+      "students": [
+        "0079866",
+        "0079891",
+        "0079812"
+      ]
+    },
+    {
+      "course_id": 2,
+      "course_name": "Fisica aplicada",
+      "course_code": "PHY-210",
+      "teacher_id": 1,
+      "classroom": "Salon 204",
+      "career": "Ingenieria mecatronica",
+      "group_name": "Grupo 2B",
+      "start_date": "2026-08-01",
+      "end_date": "2026-12-15",
+      "absence_limit": 4,
+      "schedule_blocks": [
+        {
+          "id": "b3",
+          "days": [
+            "M",
+            "J"
+          ],
+          "start_time": "8:00",
+          "end_time": "10:00"
+        }
+      ],
+      "students": [
+        "0079762",
+        "0079788"
+      ]
+    },
+    {
+      "course_id": 3,
+      "course_name": "Arquitectura Premium",
+      "course_code": "ARP-366",
+      "teacher_id": 7,
+      "classroom": "Salon 501",
+      "career": "Ingenieria en software",
+      "group_name": "Grupo 9A",
+      "start_date": "2026-08-01",
+      "end_date": "2026-12-15",
+      "absence_limit": 3,
+      "schedule_blocks": [
+        {
+          "id": "demo-a",
+          "days": [
+            "L",
+            "X"
+          ],
+          "start_time": "09:00",
+          "end_time": "11:00"
+        }
+      ],
+      "students": [
+        "8862236"
+      ]
+    }
+  ],
+  "attendances": [
+    {
+      "attendance_id": 1,
+      "student_code": "0079866",
+      "course_id": 1,
+      "date": "2026-06-10",
+      "time": "9:00 - 11:00",
+      "status": "PRESENTE"
+    },
+    {
+      "attendance_id": 2,
+      "student_code": "0079812",
+      "course_id": 1,
+      "date": "2026-06-10",
+      "time": "9:00 - 11:00",
+      "status": "AUSENTE"
+    },
+    {
+      "attendance_id": 3,
+      "student_code": "0079788",
+      "course_id": 2,
+      "date": "2026-06-11",
+      "time": "8:00 - 10:00",
+      "status": "AUSENTE"
+    },
+    {
+      "attendance_id": 4,
+      "student_code": "0079866",
+      "course_id": 1,
+      "date": "2026-06-12",
+      "time": "11:00 - 13:00",
+      "status": "RETARDO"
+    },
+    {
+      "attendance_id": 5,
+      "student_code": "0079866",
+      "course_id": 1,
+      "date": "2026-06-13",
+      "time": "19:00 - 20:00",
+      "status": "PENDING"
+    },
+    {
+      "attendance_id": 6,
+      "student_code": "0079866",
+      "course_id": 1,
+      "date": "2026-06-16",
+      "time": "9:00 - 11:00",
+      "status": "PRESENTE"
+    },
+    {
+      "attendance_id": 7,
+      "student_code": "8862236",
+      "course_id": 3,
+      "date": "2026-06-16",
+      "time": "09:00 - 11:00",
+      "status": "PRESENTE"
+    }
+  ],
+  "excuses": [
+    {
+      "excuse_id": 1,
+      "attendance_id": 5,
+      "student_code": "0079866",
+      "course_id": 1,
+      "reason": "Otro. Se me poncho la llanta del carro y no pude llegar a tiempo.",
+      "status": "PENDING",
+      "created_at": "2026-06-13T19:35:00.000Z"
+    },
+    {
+      "excuse_id": 2,
+      "attendance_id": 3,
+      "student_code": "0079788",
+      "course_id": 2,
+      "reason": "Pendiente de revision por transporte.",
+      "status": "PENDING",
+      "created_at": "2026-06-11T10:20:00.000Z"
+    }
+  ],
+  "attendance_sessions": [
+    {
+      "session_id": 1,
+      "teacher_id": 1,
+      "course_id": 1,
+      "started_at": "2026-06-16T02:46:49.346Z",
+      "expires_at": "2026-06-16T02:51:49.346Z",
+      "scanned_codes": [
+        "0079866"
+      ]
+    },
+    {
+      "session_id": 2,
+      "teacher_id": 1,
+      "course_id": 1,
+      "started_at": "2026-06-16T03:09:49.672Z",
+      "expires_at": "2026-06-16T03:14:49.672Z",
+      "scanned_codes": []
+    },
+    {
+      "session_id": 3,
+      "teacher_id": 7,
+      "course_id": 3,
+      "started_at": "2026-06-16T15:06:06.776Z",
+      "expires_at": "2026-06-16T15:11:06.776Z",
+      "scanned_codes": [
+        "8862236"
+      ]
+    }
+  ]
+}

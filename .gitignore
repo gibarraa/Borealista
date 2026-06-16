@@ -1,0 +1,10 @@
+.DS_Store
+.derived-screens/
+output/
+tmp/
+DerivedData/
+.build/
+.swiftpm/
+node_modules/
+*.xcuserstate
+xcuserdata/
