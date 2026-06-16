@@ -459,6 +459,64 @@ struct FormField: View {
     }
 }
 
+struct DateFormField: View {
+		let title: String
+		let icon: String
+		@Binding var date: Date
+		var components: DatePickerComponents
+
+		var body: some View {
+				VStack(alignment: .leading, spacing: 10) {
+						Text(title)
+								.font(BorealistaType.label(12))
+								.foregroundStyle(BorealistaPalette.cocoa)
+
+						HStack(spacing: 12) {
+								Image(systemName: icon)
+										.font(.system(size: 15, weight: .semibold))
+										.foregroundStyle(BorealistaPalette.stone)
+										.frame(width: 16)
+
+								DatePicker(
+										"",
+										selection: $date,
+										displayedComponents: components
+								)
+								.labelsHidden()
+								.colorScheme(.light)
+								
+								Spacer()
+						}
+						.padding(.horizontal, 18)
+						.padding(.vertical, 13)
+						.background(
+								ZStack {
+										Capsule()
+												.fill(Color.white.opacity(0.20))
+										Capsule()
+												.fill(.ultraThinMaterial)
+										Capsule()
+												.fill(
+														LinearGradient(
+																colors: [Color.white.opacity(0.92), BorealistaPalette.pearl.opacity(0.62)],
+																startPoint: .topLeading,
+																endPoint: .bottomTrailing
+														)
+												)
+								}
+						)
+						.overlay(
+								Capsule()
+										.stroke(Color.white.opacity(0.76), lineWidth: 1)
+						)
+						.overlay(
+								Capsule()
+										.stroke(BorealistaPalette.line.opacity(0.28), lineWidth: 0.8)
+						)
+				}
+		}
+}
+
 struct PrimaryActionButton: View {
     let title: String
     var systemImage: String? = nil
