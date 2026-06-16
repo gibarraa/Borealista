@@ -341,6 +341,7 @@ struct TeacherClassComposerView: View {
 					draft: $draft,
 					scheduleAction: { showsScheduleComposer = true }
 				)
+				.padding(.top, 10)
 				
 				PrimaryActionButton(title: "Guardar clase", systemImage: "checkmark") {
 					saveCourse()
@@ -406,7 +407,7 @@ struct TeacherClassSettingsView: View {
 				if course != nil {
 					TeacherCourseFormContent(
 						draft: $draft,
-						scheduleAction: { showsScheduleComposer = true }
+							scheduleAction: { showsScheduleComposer = true }
 					)
 					
 					Button {
@@ -1939,128 +1940,132 @@ private struct TeacherCourseFormContent: View {
 	let scheduleAction: () -> Void
 	
 	var body: some View {
-		PremiumCard(accentOpacity: 0.18, padding: 20) {
-			HStack(alignment: .top, spacing: 16) {
-				VStack(alignment: .leading, spacing: 10) {
-					Text(previewTitle)
-						.font(BorealistaType.display(26))
-						.foregroundStyle(BorealistaPalette.wordmarkFill)
-					
-					Text(previewSubtitle)
-						.font(BorealistaType.body(14))
-						.foregroundStyle(BorealistaPalette.stone)
-					
-					if !previewTags.isEmpty {
-						ScrollView(.horizontal, showsIndicators: false) {
-							HStack(spacing: 8) {
-								ForEach(previewTags, id: \.self) { tag in
-									PillTag(title: tag, isActive: tag == draft.groupName.trimmed)
+		VStack(spacing: 16) {
+			PremiumCard(accentOpacity: 0.18, padding: 20) {
+				HStack(alignment: .top, spacing: 16) {
+					VStack(alignment: .leading, spacing: 10) {
+						Text(previewTitle)
+							.font(BorealistaType.display(26))
+							.foregroundStyle(BorealistaPalette.wordmarkFill)
+						
+						Text(previewSubtitle)
+							.font(BorealistaType.body(14))
+							.foregroundStyle(BorealistaPalette.stone)
+						
+						if !previewTags.isEmpty {
+							ScrollView(.horizontal, showsIndicators: false) {
+								HStack(spacing: 8) {
+									ForEach(previewTags, id: \.self) { tag in
+										PillTag(title: tag, isActive: tag == draft.groupName.trimmed)
+									}
 								}
 							}
 						}
 					}
+					
+					Spacer(minLength: 0)
+					
+					BorealistaMark(width: 72)
+				}
+			}
+			.padding(.top, 12)
+			
+			PremiumCard {
+				HStack {
+					Text("Detalle")
+						.font(BorealistaType.heading(19))
+						.foregroundStyle(BorealistaPalette.ink)
+					Spacer()
+					TeacherMetricPill(title: "Materia", icon: "square.and.pencil", tint: BorealistaPalette.cedar)
 				}
 				
-				Spacer(minLength: 0)
-				
-				BorealistaMark(width: 72)
-			}
-		}
-		
-		PremiumCard {
-			HStack {
-				Text("Detalle")
-					.font(BorealistaType.heading(19))
-					.foregroundStyle(BorealistaPalette.ink)
-				Spacer()
-				TeacherMetricPill(title: "Materia", icon: "square.and.pencil", tint: BorealistaPalette.cedar)
-			}
-			
-			FormField(
-				title: "Nombre de materia",
-				icon: "book.closed.fill",
-				text: $draft.name,
-				prompt: "Matematicas avanzadas",
-				autocapitalization: .words
-			)
-			
-			FormField(
-				title: "Salon",
-				icon: "building.2.fill",
-				text: $draft.classroom,
-				prompt: "Salon 302",
-				autocapitalization: .words
-			)
-			
-			FormField(
-				title: "Carrera",
-				icon: "graduationcap.fill",
-				text: $draft.career,
-				prompt: "Ingenieria en software",
-				autocapitalization: .words
-			)
-			
-			FormField(
-				title: "Grupo",
-				icon: "person.3.fill",
-				text: $draft.groupName,
-				prompt: "Grupo 3A",
-				autocapitalization: .words
-			)
-			
-			FormField(
-				title: "Numero de faltas",
-				icon: "exclamationmark.circle.fill",
-				text: $draft.absenceLimit,
-				prompt: "3",
-				keyboardType: .numberPad
-			)
-			
-			HStack(spacing: 12) {
-				DateFormField(
-					title: "Periodo inicial",
-					icon: "calendar",
-					date: $draft.periodStart.asDate(format: "d MMM yyyy"),
-					components: .date
+				FormField(
+					title: "Nombre de materia",
+					icon: "book.closed.fill",
+					text: $draft.name,
+					prompt: "Matematicas avanzadas",
+					autocapitalization: .words
 				)
+				
+				FormField(
+					title: "Salon",
+					icon: "building.2.fill",
+					text: $draft.classroom,
+					prompt: "Salon 302",
+					autocapitalization: .words
+				)
+				
+				FormField(
+					title: "Carrera",
+					icon: "graduationcap.fill",
+					text: $draft.career,
+					prompt: "Ingenieria en software",
+					autocapitalization: .words
+				)
+				
+				FormField(
+					title: "Grupo",
+					icon: "person.3.fill",
+					text: $draft.groupName,
+					prompt: "Grupo 3A",
+					autocapitalization: .words
+				)
+				
+				FormField(
+					title: "Numero de faltas",
+					icon: "exclamationmark.circle.fill",
+					text: $draft.absenceLimit,
+					prompt: "3",
+					keyboardType: .numberPad
+				)
+				
+				HStack(spacing: 12) {
+					DateFormField(
+						title: "Periodo inicial",
+						icon: "calendar",
+						date: $draft.periodStart.asDate(format: "d MMM yyyy"),
+						components: .date
+					)
 
-				DateFormField(
-					title: "Periodo final",
-					icon: "calendar.badge.clock",
-					date: $draft.periodEnd.asDate(format: "d MMM yyyy"),
-					components: .date
-				)
+					DateFormField(
+						title: "Periodo final",
+						icon: "calendar.badge.clock",
+						date: $draft.periodEnd.asDate(format: "d MMM yyyy"),
+						components: .date
+					)
+				}
 			}
-		}
-		
-		PremiumCard(accentOpacity: 0.14) {
-			HStack {
-				Text("Horario")
-					.font(BorealistaType.heading(19))
-					.foregroundStyle(BorealistaPalette.ink)
+			
+			PremiumCard(accentOpacity: 0.14) {
+				HStack {
+					Text("Horario")
+						.font(BorealistaType.heading(19))
+						.foregroundStyle(BorealistaPalette.ink)
+					
+					Spacer()
+					
+					Button("Editar") {
+						scheduleAction()
+					}
+					.font(BorealistaType.heading(14))
+					.foregroundStyle(BorealistaPalette.cedar)
+				}
 				
-				Spacer()
+				if draft.scheduleBlocks.isEmpty {
+					Text("Agrega al menos un bloque de horario.")
+						.font(BorealistaType.body(14))
+						.foregroundStyle(BorealistaPalette.stone)
+				} else {
+					ForEach(draft.scheduleBlocks) { block in
+						TeacherScheduleSummaryRow(block: block)
+					}
+				}
 				
-				Button("Editar") {
+				SecondaryActionButton(title: draft.scheduleBlocks.isEmpty ? "Agregar horario" : "Editar horario") {
 					scheduleAction()
 				}
-				.font(BorealistaType.heading(14))
-				.foregroundStyle(BorealistaPalette.cedar)
 			}
-			
-			if draft.scheduleBlocks.isEmpty {
-				Text("Agrega al menos un bloque de horario.")
-					.font(BorealistaType.body(14))
-					.foregroundStyle(BorealistaPalette.stone)
-			} else {
-				ForEach(draft.scheduleBlocks) { block in
-					TeacherScheduleSummaryRow(block: block)
-				}
-			}
-			
-			SecondaryActionButton(title: draft.scheduleBlocks.isEmpty ? "Agregar horario" : "Editar horario") {
-				scheduleAction()
-			}
+			.padding(.bottom, 12)
 		}
 	}
 	
@@ -2836,3 +2841,4 @@ extension Binding where Value == String {
 		)
 	}
 }
+
